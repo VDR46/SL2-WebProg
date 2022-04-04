@@ -3,7 +3,7 @@
 
     session_start();
     if(isset($_SESSION)){
-        $str_query = "select*from msuser where nik = '".$_SESSION["registNik"]."'";
+        $str_query = "select*from msuser where username = '".$_SESSION["registUsername"]."'";
         $query = mysqli_query($connection, $str_query);
         $row = mysqli_fetch_array($query);
     }
@@ -42,7 +42,7 @@
                     <td style="font-size: 14pt;">Tanggal Lahir</td>
                     <td><input type="date" name="tanggalLahir" id="tanggalLahir" value="<?php echo $row['tanggalLahir'];?>"></td>
                     <td style="font-size: 14pt;">NIK</td>
-                    <td><input type="text" name="nik" id="nik" value="<?php echo $row['nik'];?> readonly"></td>
+                    <td><input type="text" name="nik" id="nik" value="<?php echo $row['nik'];?>"></td>
                 </tr>
                 <br>
                 <tr>
@@ -63,7 +63,7 @@
                 <br>
                 <tr>
                     <td style="font-size: 14pt;">Username</td>
-                    <td><input type="text" name="username" id="username" value="<?php echo $row['username'];?>"></td>
+                    <td><input type="text" name="username" id="username" value="<?php echo $row['username'];?> readonly"></td>
                     <td style="font-size: 14pt;">Password</td>
                     <td><input type="password" name="password" id="password" value="<?php echo $row['Password'];?>"></td>
                 </tr>
